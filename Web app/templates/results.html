@@ -9,9 +9,27 @@
     <title>Processed Image Results</title>
 </head>
 <body>
-    <div class="container mt-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Image Processing Dashboard</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/results">Results</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!-- <div class="container mt-4">
         <h1>Processed Image Results</h1>
-        <div class="image-row">  <!-- Flex container for images -->
+        <div class="image-row"> 
             <div>
                 <h5>Check Finder Results</h5>
                 <img src="{{ url_for('download', filename='check_finder_output.png', download='false') }}" alt="Check Finder Results" class="fixed-size-image">
@@ -22,9 +40,65 @@
                 <img src="{{ url_for('download', filename='text_detection_output.png', download='false') }}" alt="Text Detection Results" class="fixed-size-image">
                 <a href="{{ url_for('download', filename='text_detection_output.png', download='true') }}" class="btn btn-primary btn-sm">Download</a>
             </div>
+            <div>
+                <h5>Stamp Removal Results</h5>
+                <img src="{{ url_for('download', filename='stamp_remover_output.png', download='false') }}" alt="Text Detection Results" class="fixed-size-image">
+                <a href="{{ url_for('download', filename='stamp_remover_output.png', download='true') }}" class="btn btn-primary btn-sm">Download</a>
+            </div>
+            <div>
+                <h5>Signature Detection Results</h5>
+                <img src="{{ url_for('download', filename='signature_extraction_output.png', download='false') }}" alt="Text Detection Results" class="fixed-size-image">
+                <a href="{{ url_for('download', filename='signature_extraction_output.png', download='true') }}" class="btn btn-primary btn-sm">Download</a>
+            </div>
         </div>
         <a href="{{ url_for('home') }}" class="btn btn-secondary mt-3">Back</a>
+    </div> -->
+    <div class="container mt-4">
+        <h1 class="text-center">Processed Image Results</h1>
+        <div class="row">
+            <div class="col-md-4 col-lg-3">
+                <div class="card">
+                    <h5 class="card-header">Check Finder Results</h5>
+                    <img src="{{ url_for('download', filename='check_finder_output.png') }}" alt="Check Finder Results" class="card-img-top">
+                    <div class="card-body">
+                        <a href="{{ url_for('download', filename='check_finder_output.png', download='true') }}" class="btn btn-primary">Download</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="card">
+                    <h5 class="card-header">Text Detection Results</h5>
+                    <img src="{{ url_for('download', filename='text_detection_output.png') }}" alt="Text Detection Results" class="card-img-top">
+                    <div class="card-body">
+                        <a href="{{ url_for('download', filename='text_detection_output.png', download='true') }}" class="btn btn-primary">Download</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="card">
+                    <h5 class="card-header">Stamp Removal Results</h5>
+                    <img src="{{ url_for('download', filename='stamp_remover_output.png') }}" alt="Stamp Removal Results" class="card-img-top">
+                    <div class="card-body">
+                        <a href="{{ url_for('download', filename='stamp_remover_output.png', download='true') }}" class="btn btn-primary">Download</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="card">
+                    <h5 class="card-header">Signature Detection Results</h5>
+                    <img src="{{ url_for('download', filename='signature_extraction_output.png') }}" alt="Signature Detection Results" class="card-img-top">
+                    <div class="card-body">
+                        <a href="{{ url_for('download', filename='signature_extraction_output.png', download='true') }}" class="btn btn-primary">Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <a href="{{ url_for('home') }}" class="btn btn-secondary">Back</a>
+        </div>
     </div>
+    
+    
     
 </body>
 </html>

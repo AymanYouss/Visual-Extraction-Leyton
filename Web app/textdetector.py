@@ -1,7 +1,7 @@
 from word_detector import prepare_img, detect, sort_line
 import cv2
 
-def run_text_detection(image_path, scale_height=50):
+def run_text_detection(image_path, scale_height=500):
     img = prepare_img(cv2.imread(image_path), scale_height)
     detections = detect(img, kernel_size=25, sigma=11, theta=7, min_area=100)
     lines = sort_line(detections)

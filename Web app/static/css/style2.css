@@ -1,0 +1,75 @@
+/* Enhanced Navigation Bar Styling */
+.navbar {
+    background-color: #aac0d8; /* Primary blue color */
+    color: rgb(70, 53, 53);
+    border-bottom: 3px solid #aecdee; /* Darker blue for contrast */
+}
+
+.navbar-brand, .navbar .nav-link {
+    color: rgb(213, 49, 49) !important; /* Ensures text color is white, overriding any Bootstrap defaults */
+    margin-right: 20px; /* Adds spacing between navigation items */
+}
+
+.navbar-brand:hover, .navbar .nav-link:hover {
+    color: #cce5ff !important; /* Lighter blue on hover */
+}
+
+.navbar {
+    background-color: #bdd9f7;
+    color: white;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+h1, .navbar-brand {
+    color: white;
+    text-align: center;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+}
+
+.fixed-size-image {
+    width: 100%;  /* Responsive width */
+    height: auto;
+    object-fit: cover;
+}
+
+.image-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn-primary, .btn-secondary {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .btn-primary, .btn-secondary {
+        width: auto;
+    }
+}
+
+
+.fixed-size-image {
+    width: 300px;  /* or any other dimensions you prefer */
+    height: 300px;
+    object-fit: cover; /* This ensures the image covers the area without distorting aspect ratio */
+}
+.image-row {
+    display: flex;
+    justify-content: start; /* Aligns images to the start of the row */
+    gap: 10px; /* Adds space between images */
+}
