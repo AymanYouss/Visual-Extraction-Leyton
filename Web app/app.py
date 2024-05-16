@@ -5,6 +5,7 @@ from check_finder import run_check_finder
 from textdetector import run_text_detection  # Import the text detection function
 from stampremover import run_stamp_removal
 from signatureextractor import run_signature_extraction
+from stampdetection import run_stamp_detection
 
 app = Flask(__name__)
 UPLOAD_FOLDER = './uploaded_images'
@@ -29,11 +30,11 @@ def home():
             file.save(filepath)
             check_results_path = run_check_finder(filepath, 'filled', '60%')
             text_results_path = run_text_detection(filepath)  # Run text detection
-            # stamp_detection_results_path = run_stamp_detection(filepath)
+            stamp_detection_results_path = run_stamp_detection(filepath)
             stamp_removal_path = run_stamp_removal(filepath)
             signature_extractor_path = run_signature_extraction(filepath)
             
-            return render_template('results.html', original_image=filepath, check_results_image=check_results_path, text_results_image=text_results_path,stamp_image=stamp_removal_path, signature_image=signature_extractor_path)
+            return render_template('results.html', original_image=filepath, check_results_image=check_results_path, text_results_image=text_results_path,stamp_removal_image=stamp_removal_path, stamp_detection_image=stamp_detection_results_path, signature_image=signature_extractor_path)
         else:
             return redirect(url_for('home'))
     return render_template('home.html')
