@@ -50,3 +50,14 @@ h1 {
         width: auto;
     }
 }
+
+.fixed-size-image {
+    width: 150px;  /* or any other dimensions you prefer */
+    height: 150px;
+    object-fit: cover; /* This ensures the image covers the area without distorting aspect ratio */
+}
+.image-row {
+    display: flex;
+    justify-content: start; /* Aligns images to the start of the row */
+    gap: 10px; /* Adds space between images */
+}

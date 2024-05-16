@@ -51,6 +51,6 @@ def run_check_finder(image_path, check_type, mark_thresh):
         raise ValueError("Error reading image from directory provided.")
     threshold = im_threshold(img)
     img = check_find(img, threshold, mark_thresh, check_type)
-    output_path = os.path.join('output_images', 'edited.png')
+    output_path = os.path.join('output_images', 'check_finder_output.png')
     cv2.imwrite(output_path, img)
     return output_path
