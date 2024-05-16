@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+    <title>Image Processing Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload an Image</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" class="form-control">
+            <button type="submit" class="btn btn-primary mt-2">Process Image</button>
+        </form>
+    </div>
+</body>
+</html>
